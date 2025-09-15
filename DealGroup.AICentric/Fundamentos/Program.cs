@@ -1,42 +1,109 @@
 ﻿using Fundamentos.Models; // Importando o namespace Fundamentos.Models para usar a classe Pessoa
-// Precisamos fazer a importação do namespace onde a classe está para poder usá-la.
-// Em projetos maiores, podemos ter várias classes em vários namespaces diferentes, até com o mesmo nome.
+// O namespace é como uma "caixa" que organiza as classes. Para usar a classe Pessoa, devemos importar este namespace.
 
 
-// Toda ação em C# começa pelo método Main. Aqui é onde o programa começa a executar.
-// Variáveis são declaradas dentro deste método ou em outras classes, e servem para armazenar dados.
-// No C#, variáveis não podem conter espaços, acentos ou caracteres especiais, apenas o _ (underline).
-// Exemplo: nome_completo é válido, mas nome completo ou nome@completo não são.
+// Toda execução do programa em C# começa pelo método Main. 
+// É aqui que o código do programa será executado, como se fosse o ponto de entrada.
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Declarando e criando uma instância (objeto) da classe Pessoa
+        // Uma instância é como uma "cópia" da classe, onde podemos armazenar valores específicos para ela.
+        Pessoa pessoa1 = new Pessoa(); // Criação do objeto pessoa1 da classe Pessoa
 
-//Pessoa pessoa1 = new Pessoa(); // Criando uma nova instância (objeto) da classe Pessoa
+        // Atribuindo valores aos atributos do objeto pessoa1
+        pessoa1.Nome = "Lucas"; // Atribuindo o valor "Lucas" ao atributo Nome de pessoa1
+        pessoa1.Idade = 25; // Atribuindo o valor 25 ao atributo Idade de pessoa1
 
-// Atribuindo valores aos atributos do objeto pessoa1
-//pessoa1.Nome = "Lucas"; // Atribuindo o valor "Lucas" ao atributo Nome da pessoa1
-//pessoa1.Idade = 25; // Atribuindo o valor 25 ao atributo Idade da pessoa1
+        // Chamando o método Apresentar da pessoa1
+        // O método Apresentar é uma ação que o objeto pode executar, neste caso, exibe uma mensagem no console
+        pessoa1.Apresentar(); // Chama o método Apresentar da classe Pessoa e exibe no console
 
-// Chamando o método Apresentar do objeto pessoa1
-//pessoa1.Apresentar(); // O método Apresentar imprime uma mensagem no console
+        // Explicações importantes:
+        // 1. O ponto (.) é utilizado para acessar membros (atributos e métodos) de um objeto.
+        // 2. O C# é case-sensitive, ou seja, ele diferencia maiúsculas de minúsculas. Então, "Nome" é diferente de "nome".
+        // 3. O ponto e vírgula (;) encerra uma instrução em C#.
+        // 4. O estilo camelCase é usado para declarar variáveis: começa com minúscula e as palavras subsequentes começam com maiúsculas. Exemplo: nomeCompleto.
 
-// Explicações sobre o código:
-// - O ponto (.) é usado para acessar os membros (atributos e métodos) de uma classe ou objeto.
-// - O C# é case-sensitive, ou seja, ele diferencia maiúsculas de minúsculas. Então, "Nome" é diferente de "nome".
-// - O ponto e vírgula (;) é usado para finalizar uma instrução em C#.
-// - Quando declaramos variáveis, utilizamos o estilo camelCase, ou seja, a primeira letra é minúscula e as palavras subsequentes começam com letras maiúsculas. Exemplo: nomeCompleto.
+        // ---------------- Exemplos de declaração de variáveis -----------------
 
-// ------------ Exemplos de declaração de variáveis em C# ------------
-// string apresentacao = "olá, seja bem, vindo ao curso de C#"; // Declarando uma variável do tipo string (texto) chamada apresentacao e atribuindo um valor a ela
-// int quantidade = 1; // Declarando uma variável do tipo int (número inteiro)
-// double altura = 1.80; // Declarando uma variável do tipo double (número com casas decimais)
-// decimal preco = 1.80M; // Declarando uma variável do tipo decimal (número com casas decimais) e o M no final indica que é um decimal
-// bool condicao = true; // Declarando uma variável do tipo bool (booleano) que pode ser true ou false
+        // Declaração de variáveis de diferentes tipos de dados
+        string apresentacao = "Olá, seja bem-vindo ao curso de C#"; // Variável de tipo string (texto)
+        int quantidade = 1; // Variável de tipo int (número inteiro)
+        double altura = 1.80; // Variável de tipo double (número com casas decimais)
+        decimal preco = 1.80M; // Variável do tipo decimal (também número com casas decimais) com o sufixo M indicando que é decimal
+        bool condicao = true; // Variável do tipo bool (booleano), que pode ser verdadeiro ou falso
 
-// Console.WriteLine(apresentacao); // Imprimindo o valor da variável apresentacao no console
-// Console.WriteLine("Quantidade: " + quantidade); // Imprimindo o valor da variável quantidade no console
-// Console.WriteLine("Altura: " + altura.ToString("0.00")); // Imprimindo o valor da variável altura no console, o .ToString("0.00")) formata o número para ter 2 casas decimais, como a variável é do tipo double, que pode ter várias casas decimais, usamos o ToString para formatar a saída
-// Console.WriteLine("Preço: " + preco); // Imprimindo o valor da variável preco no console
-// Console.WriteLine("Condição: " + condicao); // Imprimindo o valor da variável condicao no console
+        // Exibindo o valor das variáveis no console
+        Console.WriteLine(apresentacao); // Exibe a string "Olá, seja bem-vindo ao curso de C#"
+        Console.WriteLine("Quantidade: " + quantidade); // Exibe o número inteiro armazenado na variável quantidade
+        Console.WriteLine("Altura: " + altura.ToString("0.00")); // Exibe a altura formatada com 2 casas decimais
+        Console.WriteLine("Preço: " + preco); // Exibe o preço
+        Console.WriteLine("Condição: " + condicao); // Exibe o valor booleano (true ou false)
 
-//----------- Representação de datas em C# -----------
-DateTime dataAtual = DateTime.Now.AddDays(5); // Declarando uma variável do tipo DateTime (data e hora) e atribuindo a data e hora atual a ela ou seja esta pegando a data e hora do sistema
-Console.WriteLine(dataAtual.ToString("dd/MM/yyyy HH:mm")); // Imprimindo o valor da variável dataAtual no console
+        // ---------------------- Trabalhando com datas ----------------------
 
+        // A classe DateTime permite trabalhar com datas e horas
+        DateTime dataAtual = DateTime.Now.AddDays(5); // Cria uma variável com a data e hora atual + 5 dias
+        Console.WriteLine(dataAtual.ToString("dd/MM/yyyy HH:mm")); // Exibe a data formatada como dia/mês/ano hora:minuto
+
+        // ------------------- Operadores de atribuição ---------------------
+
+        int a = 10; // Declarando e inicializando a variável a com o valor 10
+        int b = 20; // Declarando e inicializando a variável b com o valor 20
+        int c = a + b; // Somando os valores de a e b e atribuindo o resultado à variável c
+        Console.WriteLine("Valor de c: " + c); // Exibe o valor da soma, ou seja, 30
+
+        // O operador "=" é o operador de atribuição, que atribui o valor da expressão à esquerda para a variável à direita.
+
+        // ---------------- Operadores de atribuição compostos ----------------
+
+        c = c + 5; // Soma 5 ao valor de c e atribui o novo valor a c
+        // Podemos simplificar isso usando o operador de atribuição composto +=
+        c += 5; // O mesmo que c = c + 5, mas de forma mais compacta
+        Console.WriteLine("Valor de c após c += 5: " + c); // Exibe o novo valor de c, que agora é 40
+
+        // --------------- Convertendo tipos de variáveis ---------------
+
+        // Converting (Casting) de tipos de dados
+        int numeroConvertido = Convert.ToInt32("5"); // Converte a string "5" para o tipo int
+        Console.WriteLine("Valor de numeroConvertido: " + numeroConvertido); // Exibe o valor convertido (5)
+
+        // Alternativa ao Convert é o método Parse
+        // Exemplo: int numeroParse = int.Parse("5"); // Também converte a string "5" para int
+
+        // -------------------- Diferenças entre Parse e Convert --------------------
+
+        // A principal diferença entre os dois métodos é o tratamento de erros.
+        // O método Convert retorna um valor padrão se não conseguir realizar a conversão (ex: 0 para int).
+        // Já o Parse lança uma exceção se não conseguir converter (ex: ArgumentNullException se a string for null).
+
+        int a2 = Convert.ToInt32(null); // Não gera erro, apenas atribui 0 a variável a2
+        Console.WriteLine("Valor de a2 após Convert.ToInt32(null): " + a2); // Exibe 0
+
+        // int.Parse(null); // Isso geraria uma exceção do tipo ArgumentNullException, pois Parse não aceita valores nulos.
+
+        // -------------------- Conversão para String--------------------
+        int inteiro = 5;
+        string d = inteiro.ToString(); // Converte o int para string
+        Console.WriteLine("Valor de a (int convertido para string): " + d); // Exibe "5" como string 
+                                                                            // Também podemos converter outros tipos para string usando ToString(), como double, decimal, bool, DateTime, etc, pois todos herdam da classe Object que possui o método ToString().
+
+
+        // -------------------- Casting implícito--------------------
+        int g = 5;
+        double f = g; // Conversão implícita de int para double, pois double tem maior capacidade
+        Console.WriteLine("Valor de bf (double): " + f); // Exibe 5 como double (5.0)
+
+        // -------------------- Casting explícito--------------------
+        long v = 5;
+        int h = Convert.ToInt32 (v); // Conversão implícita de int para long, pois long tem maior capacidade
+        Console.WriteLine("Valor de h (long): " + h); // Exibe 5 como long
+        
+
+
+
+
+    }
+}
