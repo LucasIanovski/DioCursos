@@ -1,0 +1,14 @@
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\bin\Debug\net8.0\Fundamentos.exe
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\bin\Debug\net8.0\Fundamentos.deps.json
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\bin\Debug\net8.0\Fundamentos.runtimeconfig.json
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\bin\Debug\net8.0\Fundamentos.dll
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\bin\Debug\net8.0\Fundamentos.pdb
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\Fundamentos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\Fundamentos.AssemblyInfoInputs.cache
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\Fundamentos.AssemblyInfo.cs
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\Fundamentos.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\Fundamentos.dll
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\refint\Fundamentos.dll
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\Fundamentos.pdb
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\Fundamentos.genruntimeconfig.cache
+C:\Users\Lucas\Documents\DioCursos\DealGroup.AICentric\Fundamentos\obj\Debug\net8.0\ref\Fundamentos.dll
