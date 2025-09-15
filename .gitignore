@@ -1,0 +1,7 @@
+# Ignorar arquivos binários de build e temporários
+**/bin/
+**/obj/
+*.user
+*.userosscache
+*.suo
+*.userprefs
