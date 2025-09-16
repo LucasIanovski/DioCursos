@@ -98,12 +98,70 @@ class Program
 
         // -------------------- Casting explícito--------------------
         long v = 5;
-        int h = Convert.ToInt32 (v); // Conversão implícita de int para long, pois long tem maior capacidade
+        int h = Convert.ToInt32(v); // Conversão implícita de int para long, pois long tem maior capacidade
         Console.WriteLine("Valor de h (long): " + h); // Exibe 5 como long
-        
 
+        // -------------------- Ordem dos operadores --------------------
+        Double resultado = 4 / 2 + 2; // A divisão e multiplicação têm precedência sobre a adição e subtração
+        Console.WriteLine("Valor de resultado: " + resultado); // Exibe 4, pois 4/2 = 2 + 2 = 4
+        resultado = (4 / (2 + 2)); // Usando parênteses para alterar a ordem das operações
+        Console.WriteLine("Valor de resultado com parênteses: " + resultado);
 
+        // -------------------- Covertendo de maneira segura--------------------
+        string valor = "15-abc"; // String que não pode ser convertida diretamente para int
+        // Usando TryParse para tentar converter a string para int de forma segura
+        int numero = 0; // Variável para armazenar o valor convertido
+        int.TryParse(valor, out numero); // Tenta converter valor para int e armazena em numero. Se falhar, numero permanece 0  
+        Console.WriteLine("Valor de numero após TryParse: " + numero); // Exibe 0, pois a conversão falhou
 
+        // -------------------- Operadores Consicionais--------------------
+        int quantidadeEmEstoque = 10;
+        int quantidadeCompra = 0;
+        bool compraPossivel = quantidadeCompra > 0 && quantidadeEmEstoque >= quantidadeCompra; // Verifica se há estoque suficiente para a compra e se a compra é maior que zero
+        Console.WriteLine($"Quantidade em estoque: " + quantidadeEmEstoque);
+        Console.WriteLine($"Quantidade da compra: " + quantidadeCompra);
+        Console.WriteLine($"Compra possível?  {compraPossivel}"); // Verifica se a compra é possível (true ou false)
 
+        if (quantidadeCompra == 0) // Verifica se a quantidade de compra é zero
+        {
+            Console.WriteLine("Venda inválida"); // Mensagem se a quantidade de compra for zero
+        }
+        else if (compraPossivel) // If aninhado: Verifica se a compra é possível
+        {
+            Console.WriteLine("Venda Realizada"); // Mensagem se a compra for possível
+        }
+        else
+        {
+            Console.WriteLine("Compra não possível. Estoque insuficiente."); // Mensagem se a compra não for possível
+        }
     }
+        
+        // -------------------- Switch case --------------------    
+        class ExemploSwitch
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Digite uma letra ");
+            string letra = Console.ReadLine();
+            switch (letra)
+            {
+                case "a":
+                case "e":
+                case "i":
+                case "o":
+                case "u":
+                    Console.WriteLine("Vogal");
+                    break;
+
+                default:
+                    Console.WriteLine("Consoante");
+                    break;
+            }
+        }
+    }
+
+        // -------------------- Operador ou || --------------------    
+      
+    
 }
