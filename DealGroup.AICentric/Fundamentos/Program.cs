@@ -75,11 +75,8 @@ class Program
 
         // -------------------- Diferenças entre Parse e Convert --------------------
 
-        // A principal diferença entre os dois métodos é o tratamento de erros.
-        // O método Convert retorna um valor padrão se não conseguir realizar a conversão (ex: 0 para int).
-        // Já o Parse lança uma exceção se não conseguir converter (ex: ArgumentNullException se a string for null).
-
-        int a2 = Convert.ToInt32(null); // Não gera erro, apenas atribui 0 a variável a2
+        string? valorNulo = null; // Criando uma variável string nula
+        int a2 = Convert.ToInt32(valorNulo); // Não gera erro, apenas atribui 0 a variável a2
         Console.WriteLine("Valor de a2 após Convert.ToInt32(null): " + a2); // Exibe 0
 
         // int.Parse(null); // Isso geraria uma exceção do tipo ArgumentNullException, pois Parse não aceita valores nulos.
@@ -90,7 +87,6 @@ class Program
         Console.WriteLine("Valor de a (int convertido para string): " + d); // Exibe "5" como string 
                                                                             // Também podemos converter outros tipos para string usando ToString(), como double, decimal, bool, DateTime, etc, pois todos herdam da classe Object que possui o método ToString().
 
-
         // -------------------- Casting implícito--------------------
         int g = 5;
         double f = g; // Conversão implícita de int para double, pois double tem maior capacidade
@@ -98,8 +94,8 @@ class Program
 
         // -------------------- Casting explícito--------------------
         long v = 5;
-        int h = Convert.ToInt32(v); // Conversão implícita de int para long, pois long tem maior capacidade
-        Console.WriteLine("Valor de h (long): " + h); // Exibe 5 como long
+        int h = Convert.ToInt32(v); // Conversão explícita de long para int
+        Console.WriteLine("Valor de h (long): " + h); // Exibe 5 como int
 
         // -------------------- Ordem dos operadores --------------------
         Double resultado = 4 / 2 + 2; // A divisão e multiplicação têm precedência sobre a adição e subtração
@@ -122,7 +118,7 @@ class Program
         Console.WriteLine($"Quantidade da compra: " + quantidadeCompra);
         Console.WriteLine($"Compra possível?  {compraPossivel}"); // Verifica se a compra é possível (true ou false)
 
-        if (quantidadeCompra == 0) // Verifica se a quantidade de compra é zero
+        if (quantidadeCompra == 0) // Verifica se a quantidade de compra for zero
         {
             Console.WriteLine("Venda inválida"); // Mensagem se a quantidade de compra for zero
         }
@@ -134,17 +130,17 @@ class Program
         {
             Console.WriteLine("Compra não possível. Estoque insuficiente."); // Mensagem se a compra não for possível
         }
-    }
-        
-        // -------------------- Switch case --------------------    
-        class ExemploSwitch
-    {
-        static void Main(string[] args)
-        {
 
-            Console.WriteLine("Digite uma letra ");
-            string letra = Console.ReadLine();
-            switch (letra)
+        // -------------------- Switch case --------------------    
+        Console.WriteLine("Digite uma letra ");
+        string? letra = Console.ReadLine(); // tornar string? pois pode retornar null
+        if (letra == null)
+        {
+            Console.WriteLine("Nenhuma letra digitada.");
+        }
+        else
+        {
+            switch (letra.ToLower()) // Adicionando ToLower() para tratar maiúsculas/minúsculas
             {
                 case "a":
                 case "e":
@@ -153,15 +149,48 @@ class Program
                 case "u":
                     Console.WriteLine("Vogal");
                     break;
-
                 default:
                     Console.WriteLine("Consoante");
                     break;
             }
         }
-    }
 
         // -------------------- Operador ou || --------------------    
-      
-    
+
+        // Exemplo didático do operador OU (||)
+        // Verifica se uma pessoa pode entrar em uma festa se tiver convite OU estiver na lista de convidados
+
+        bool temConvite = false; // A pessoa não tem convite
+        bool estaNaLista = true; // Mas ela está na lista
+
+        // A pessoa pode entrar se ela tiver convite OU estiver na lista
+        bool podeEntrar = temConvite || estaNaLista;
+
+        Console.WriteLine("Tem convite? " + temConvite);
+        Console.WriteLine("Está na lista? " + estaNaLista);
+        Console.WriteLine("Pode entrar na festa? " + podeEntrar); // Exibe "true", pois está na lista
+
+        // -------------------- Operador de negação ! --------------------
+
+        // O operador de negação "!" inverte o valor booleano.
+        // Se a variável for true, ela se torna false, e vice-versa.
+
+        bool estaChovendo = true; // Está chovendo
+        Console.WriteLine("Está chovendo? " + estaChovendo); // Exibe true
+
+        // Vamos negar a condição:
+        if (!estaChovendo) // Negação: se NÃO estiver chovendo
+        {
+            Console.WriteLine("Pode sair sem guarda-chuva."); // Não será exibido porque está chovendo
+        }
+        else
+        {
+            Console.WriteLine("Leve um guarda-chuva!"); // Será exibido porque está chovendo
+        }
+
+        // Também podemos usar a negação em variáveis booleanas diretamente:
+        bool podeDirigir = false;
+        Console.WriteLine("Pode dirigir? " + podeDirigir); // Exibe false
+        Console.WriteLine("Não pode dirigir? " + !podeDirigir); // Exibe true, pois negamos o valor
+    }
 }
