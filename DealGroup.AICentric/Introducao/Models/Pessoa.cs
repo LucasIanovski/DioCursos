@@ -18,6 +18,16 @@ namespace Introducao.Models
         public int string nome { get; set;} Dessa forma aceita qualquer valor até nulo
         abaixo veremos como fazer da maneira correta */
 
+        public Pessoa() //Construtor padrão da classe Pessoa, é um método especial que é executado quando a classe é instanciada
+        {
+
+        }
+        public Pessoa(string nome, string sobrenome) //Construtor da classe Pessoa, é um método especial que é executado quando a classe é instanciada
+        {
+
+        }
+            
+
 
         private string _nome; //Campo que vai armazenar o nome, quando está privado somente a classe pessoa pode acessar, o arquivo Program.cs não consegue acessar
         private int _idade; //Campo que vai armazenar a idade
@@ -59,5 +69,6 @@ namespace Introducao.Models
         {
             Console.WriteLine($"Olá, meu nome é {NomeCompleto} e tenho {Idade} anos.".ToUpper());
         }
+
     }
 }
