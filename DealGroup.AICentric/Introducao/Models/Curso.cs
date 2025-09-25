@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Introducao.Models
 {
@@ -13,30 +11,32 @@ namespace Introducao.Models
         // Método para adicionar um aluno ao curso
         public void AdicionarAluno(Pessoa aluno)
         {
-
             Alunos.Add(aluno);
         }
 
+        // Método para remover aluno
         public bool RemoverAluno(Pessoa aluno)
         {
             return Alunos.Remove(aluno);
-             
         }
 
-         public void ListarAlunos()
+        // Método para listar alunos
+        public void ListarAlunos()
         {
             Console.WriteLine($"Alunos do curso {Nome}:");
-            foreach (Pessoa aluno in Alunos)
+
+            for (int i = 0; i < Alunos.Count; i++) // corrigido
             {
-                Console.WriteLine(aluno.NomeCompleto);
+                string texto = $"Nº {i + 1}: {Alunos[i].NomeCompleto}";
+                Console.WriteLine(texto);
             }
         }
 
+        // Método para obter quantidade de alunos
         public int ObterQuantidadeAlunosMatriculados()
         {
             int quantidade = Alunos.Count;
-            
-            return quantidade; // todo metodo que tem retorno tem que ter a palvara return
+            return quantidade; // todo método que tem retorno precisa de return
         }
     }
 }

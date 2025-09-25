@@ -20,17 +20,23 @@ namespace Introducao.Models
 
         public Pessoa() //Construtor padrão da classe Pessoa, é um método especial que é executado quando a classe é instanciada
         {
-
+            // Inicializando valores padrão para evitar null
+            _nome = string.Empty;
+            Sobrenome = string.Empty;
+            _idade = 0;
         }
+
         public Pessoa(string nome, string sobrenome) //Construtor da classe Pessoa, é um método especial que é executado quando a classe é instanciada
         {
-
+            // Ao instanciar já atribuimos valores para evitar null
+            Nome = nome;
+            Sobrenome = sobrenome;
+            _idade = 0;
         }
             
-
-
-        private string _nome; //Campo que vai armazenar o nome, quando está privado somente a classe pessoa pode acessar, o arquivo Program.cs não consegue acessar
+        private string _nome = string.Empty; //Campo que vai armazenar o nome, quando está privado somente a classe pessoa pode acessar, o arquivo Program.cs não consegue acessar
         private int _idade; //Campo que vai armazenar a idade
+
         public string Nome
         {
             get
@@ -40,15 +46,18 @@ namespace Introducao.Models
             set
             {
                 //Validação para não aceitar nomes vazios ou nulos
-                if (value == "")
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException("O nome não pode ser vazio ou nulo.");
                 }
                 _nome = value;
             }
         }
-        public string Sobrenome { get; set; }
+
+        public string Sobrenome { get; set; } = string.Empty; //inicializado para evitar null
+
         public string NomeCompleto => $"{Nome} {Sobrenome}"; //Propriedade somente de leitura, não tem o set, só o get
+
         public int Idade
         {
             get => _idade; //retorna a idade
@@ -72,3 +81,4 @@ namespace Introducao.Models
 
     }
 }
+ 
