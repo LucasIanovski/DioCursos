@@ -1,3 +1,8 @@
+/* ================================================================
+   📌 CLASSE CURSO
+   Representa um curso que pode ter vários alunos (Pessoa)
+   ================================================================ */
+
 using System;
 using System.Collections.Generic;
 
@@ -5,38 +10,41 @@ namespace Introducao.Models
 {
     public class Curso
     {
-        public string Nome { get; set; }
-        public List<Pessoa> Alunos { get; set; }
+        // ---------- PROPRIEDADES ----------
+        public string Nome { get; set; } = string.Empty; // nome do curso
+        public List<Pessoa> Alunos { get; set; } = new List<Pessoa>(); // lista de alunos
 
-        // Método para adicionar um aluno ao curso
+        // ---------- MÉTODOS ----------
+        
+        // Adiciona um aluno ao curso
         public void AdicionarAluno(Pessoa aluno)
         {
             Alunos.Add(aluno);
         }
 
-        // Método para remover aluno
+        // Remove um aluno (true se removeu, false se não achou)
         public bool RemoverAluno(Pessoa aluno)
         {
             return Alunos.Remove(aluno);
         }
 
-        // Método para listar alunos
+        // Lista todos os alunos no console
         public void ListarAlunos()
         {
             Console.WriteLine($"Alunos do curso {Nome}:");
 
-            for (int i = 0; i < Alunos.Count; i++) // corrigido
+            for (int i = 0; i < Alunos.Count; i++)
             {
                 string texto = $"Nº {i + 1}: {Alunos[i].NomeCompleto}";
                 Console.WriteLine(texto);
             }
         }
 
-        // Método para obter quantidade de alunos
+        // Retorna a quantidade de alunos matriculados
         public int ObterQuantidadeAlunosMatriculados()
         {
             int quantidade = Alunos.Count;
-            return quantidade; // todo método que tem retorno precisa de return
+            return quantidade; 
         }
     }
 }
